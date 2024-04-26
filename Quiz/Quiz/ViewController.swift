@@ -15,7 +15,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.label.text = "Hello"
+        var str = ""
+        str = "Hello Swift"
+        self.label.text = str
         //テキストの変更
         
     }
