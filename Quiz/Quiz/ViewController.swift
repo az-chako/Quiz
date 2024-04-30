@@ -11,15 +11,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
     
+    let quizzes = ["猫は人間を超でっかい猫だと思っている？",
+                   "イヌは食べ物のおいしさを味よりも匂いで判断している？",
+                   "トラのしましま模様は皮膚まで繋がっていない？"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         var str = ""
-        str = "Hello Swift"
+        str = self.quizzes[0]
         self.label.text = str
-        //テキストの変更
-        
     }
     
     @IBAction func pressButton(_ sender: Any) {
