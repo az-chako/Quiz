@@ -26,6 +26,8 @@ class QuizManeger {
         quizzes.append(Quiz(text: "トラのシマシマ模様は皮膚まで繋がっていない？", correctAnswer: true, imageName: "tiger"))
         quizzes.append(Quiz(text: "クマは走るときに全部の足がバラバラに動いている？", correctAnswer: true, imageName: "bear"))
         quizzes.append(Quiz(text: "パンダの一番の好物は笹である？", correctAnswer: true, imageName: "panda"))
+        quizzes.append(Quiz(text: "猫は毛玉を吐く？", correctAnswer: true, imageName: "cat"))
+        quizzes.append(Quiz(text: "犬はこたつで丸くなる？", correctAnswer: true, imageName: "dog"))
         
         currentIndex = 0
         score = 0

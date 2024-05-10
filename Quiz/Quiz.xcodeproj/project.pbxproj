@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B044FA02BEDC03100A16315 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B044F9F2BEDC03100A16315 /* ResultViewController.swift */; };
 		8B1F02862BDA2F660037B954 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1F02852BDA2F660037B954 /* AppDelegate.swift */; };
 		8B1F02882BDA2F660037B954 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1F02872BDA2F660037B954 /* SceneDelegate.swift */; };
 		8B1F028A2BDA2F660037B954 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1F02892BDA2F660037B954 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B044F9F2BEDC03100A16315 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		8B1F02822BDA2F660037B954 /* Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1F02852BDA2F660037B954 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B1F02872BDA2F660037B954 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				8B7B67612BE9F55E009ED70E /* QuizViewController.swift */,
 				8BDC83132BEC6E170092F7FA /* QuizCard.swift */,
 				8BDC83152BEC9E4C0092F7FA /* Quiz.swift */,
+				8B044F9F2BEDC03100A16315 /* ResultViewController.swift */,
 				8B1F028B2BDA2F660037B954 /* Main.storyboard */,
 				8B1F02902BDA2F670037B954 /* LaunchScreen.storyboard */,
 				8B1F028E2BDA2F670037B954 /* Assets.xcassets */,
@@ -153,6 +156,7 @@
 				8B1F028A2BDA2F660037B954 /* ViewController.swift in Sources */,
 				8B1F02862BDA2F660037B954 /* AppDelegate.swift in Sources */,
 				8BDC83162BEC9E4C0092F7FA /* Quiz.swift in Sources */,
+				8B044FA02BEDC03100A16315 /* ResultViewController.swift in Sources */,
 				8B1F02882BDA2F660037B954 /* SceneDelegate.swift in Sources */,
 				8BDC83142BEC6E170092F7FA /* QuizCard.swift in Sources */,
 				8B7B67622BE9F55E009ED70E /* QuizViewController.swift in Sources */,

@@ -13,7 +13,7 @@ class QuizViewController: UIViewController {
     var nameText: String = ""
     
     @IBOutlet weak var quizCard: QuizCard!
-    let maneger: QuizManeger = QuizManeger()
+    let manager: QuizManeger = QuizManeger()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +27,46 @@ class QuizViewController: UIViewController {
     }
     
     func loadQuiz(){
-        self.quizCard.quizLavel.text = maneger.currentQuiz.text
-        self.quizCard.quizImageView.image = UIImage(named: maneger.currentQuiz.imageName)
+        self.quizCard.quizLavel.text = manager.currentQuiz.text
+        self.quizCard.quizImageView.image = UIImage(named: manager.currentQuiz.imageName)
+    }
+    
+    func answer() {
+        var translationTransform: CGAffineTransform
+        let screenWidth = UIScreen.main.bounds.width
+        let y = UIScreen.main.bounds.height * 0.2
+        
+        if self.quizCard.style == .right{
+            translationTransform = CGAffineTransform(translationX: screenWidth, y: y)
+            self.manager.answerQuiz(answer: true)
+        } else {
+            translationTransform = CGAffineTransform(translationX: -screenWidth, y: y)
+            self.manager.answerQuiz(answer: false)
+        }
+        
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: [.curveLinear],
+                       animations:  {
+            self.quizCard.transform = translationTransform
+        }, completion:  { [unowned self] (finished) in
+            if finished {
+                self.showNextQuiz()
+            }
+        })
+    }
+    
+    func showNextQuiz() {
+        self.manager.nextQuiz()
+        switch manager.status {
+        case .inAnswer:
+            self.quizCard.transform = CGAffineTransform.identity
+            self.quizCard.style = .initial
+            self.loadQuiz()
+        case .done:
+            self.quizCard.isHidden = true
+            self.performSegue(withIdentifier: "goToResult", sender: nil)
+        }
+        
+
     }
     
     @objc func dragQuizCard(_ sender: UIPanGestureRecognizer){
@@ -36,7 +74,7 @@ class QuizViewController: UIViewController {
         case .began, .changed:
             self.transformQuizCard(gesture: sender)
         case .ended:
-            break
+            self.answer()
         default:
             break
         }
@@ -58,4 +96,10 @@ class QuizViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let resultViewController: ResultViewController = segue.destination as? ResultViewController{
+            resultViewController.nameText = self.nameText
+            resultViewController.score = self.manager.score
+        }
+    }
 }

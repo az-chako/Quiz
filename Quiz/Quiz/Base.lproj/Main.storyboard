@@ -162,21 +162,22 @@
                     <connections>
                         <outlet property="label" destination="AZp-v6-HSm" id="lZH-6V-60a"/>
                         <outlet property="quizCard" destination="TKV-Rh-6r8" id="dJN-0L-TP1"/>
+                        <segue destination="O6p-K3-KpL" kind="show" identifier="goToResult" id="xxQ-BD-Neg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="siK-op-57P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968.70229007633588" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1008" y="4"/>
         </scene>
         <!--結果画面-->
         <scene sceneID="mEe-kf-VGi">
             <objects>
-                <viewController title="結果画面" id="O6p-K3-KpL" sceneMemberID="viewController">
+                <viewController title="結果画面" id="O6p-K3-KpL" customClass="ResultViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nij-sv-phG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kaw-fe-LyQ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kaw-fe-LyQ">
                                 <rect key="frame" x="16" y="346" width="361" height="160"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -194,6 +195,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="pushResultButton:" destination="O6p-K3-KpL" eventType="touchUpInside" id="fzZ-Yj-iC9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2k-SM-ThI">
                                 <rect key="frame" x="16" y="286" width="361" height="36"/>
@@ -220,6 +224,11 @@
                             <constraint firstItem="93H-4q-LF9" firstAttribute="trailing" secondItem="78r-4a-Ry4" secondAttribute="trailing" constant="40" id="tak-Fl-2b9"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mTh-iA-LSQ"/>
+                    <connections>
+                        <outlet property="label" destination="E2k-SM-ThI" id="iOn-Fb-E6P"/>
+                        <outlet property="textView" destination="Kaw-fe-LyQ" id="NSz-sV-aBn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYb-Cd-07u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
